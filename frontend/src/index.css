@@ -1,0 +1,23 @@
+:root{
+    --color-main-green: #1C924E;
+    --color-background: #E7E9D3;
+    --color-button: #40D468;
+    --color-text: #2C3E50;
+    
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+body {
+background-color: var(--color-background);
+color: var(--color-text);
+font-family: 'Solitreo', cursive;
+margin: 0;
+}
+
