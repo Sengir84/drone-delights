@@ -18,7 +18,9 @@ function Login() {
 
     try {
       const response = await axios.post(API_Routes.LOGIN, formdata);
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("username", response.data.username);
+      window.location.reload();
       navigate("/");
   }
     catch (error) {
