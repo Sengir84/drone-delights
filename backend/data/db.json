@@ -1,0 +1,40 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "image": "https://example.com/images/margherita.jpg",
+      "description": "Classic pizza with tomato sauce, mozzarella and fresh basil.",
+      "price": 89,
+      "rating": 4.5,
+      "orders": 120
+    },
+    {
+      "id": 2,
+      "name": "Caesar Salad",
+      "image": "https://example.com/images/caesar.jpg",
+      "description": "Crisp romaine lettuce with Caesar dressing, croutons and parmesan.",
+      "price": 75,
+      "rating": 4.2,
+      "orders": 85
+    },
+    {
+      "id": 3,
+      "name": "American Cheeseburger",
+      "image": "https://example.com/images/cheeseburger.jpg",
+      "description": "Juicy beef patty with cheddar cheese, lettuce, tomato, and pickles.",
+      "price": 95,
+      "rating": 4.7,
+      "orders": 150
+    },
+    {
+      "id": 4,
+      "name": "Vegan Bowl",
+      "image": "https://example.com/images/vegan-bowl.jpg",
+      "description": "Healthy bowl with quinoa, chickpeas, avocado, and fresh veggies.",
+      "price": 85,
+      "rating": 4.6,
+      "orders": 90
+    }
+  ]
+}
