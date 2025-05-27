@@ -1,0 +1,91 @@
+.menu-container{
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: rgb(163, 163, 163) 3px 3px 2px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 6px;
+  
+}
+
+.category {
+  text-shadow: rgb(163, 163, 163) 3px 3px 2px;
+  font-size: 2.5rem;
+}
+
+.food-grid,
+.drinks-grid,
+.dessert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+}
+
+
+.menu-item {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: rgb(243, 242, 242);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.menu-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.menu-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.menu-desc {
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+.menu-price {
+  color: green;
+  font-weight: bold;
+}
+
+.menu-rating {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .food-grid,
+  .drinks-grid,
+  .dessert-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .food-grid,
+  .drinks-grid,
+  .dessert-grid {
+    grid-template-columns: 1fr; /* 1 column on phones */
+  }
+}
