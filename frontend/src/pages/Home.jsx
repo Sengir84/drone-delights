@@ -1,14 +1,26 @@
 import './Home.css';
 import heroImg from '../assets/Img/hero.png';
+import PopularDishes from '../components/PopularDishes';
+import { useNavigate } from 'react-router-dom';
+import DroneBanner from '../components/DroneBanner';
+import HeroBanner from '../components/HeroBanner';
 
 function Home() {
+
+    const navigate = useNavigate();
+
+
     return (
         <div className="home-page">
-            <div className='hero-container'>
-                <img id="hero-img" src={heroImg} alt="Hero" />
-                <h1 id='heroimg-text'>Flavors of the world at your fingertips</h1>
+            <HeroBanner/>
+            
+
+            <PopularDishes />
+            
+            <div className="menu-button-wrapper">
+            <button id='menu-button' onClick={() => navigate('/menu')}>SEE OUR FULL MENU</button>
             </div>
-            <h1>Startsida</h1>
+            <DroneBanner />
         </div>
     )
 }

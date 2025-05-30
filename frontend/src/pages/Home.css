@@ -3,28 +3,44 @@
 }
 
 .hero-container {
-  height: 30vh; /* or 500px, whatever you need */
-  width: 100%;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   position: relative;
+  margin-top: 40px;
+  display: inline-block; 
+  width: 100%;
 }
 
 #hero-img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; 
 }
 
 #heroimg-text {
   position: absolute;
+  top: 15%;
+  left: 25%;
+  transform: translateX(-50%);
   color: white;
-  top: 8%;
-  left: 2%;
-  font-size: 3.3vw;
-  text-align: left;
+  font-size: 3rem;
   font-style: italic;
   font-family: 'Solitreo', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
+.menu-button-wrapper {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#menu-button {
+  left: 50%;
+  padding: 10px 20px;
+  background-color: #1C924E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
