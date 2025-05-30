@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import About from './pages/About';
 import MenuPage from './pages/Menu';
 import CartPage from './pages/Cart';
+import CheckoutPage from './pages/Checkout';
 
  function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ import CartPage from './pages/Cart';
         <Route path="/register" element={<Register />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Route>
       
     </Routes>

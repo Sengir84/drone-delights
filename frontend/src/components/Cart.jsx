@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { CartContext } from "../context/CartContext";
 import './Cart.css'; 
+import { useNavigate } from 'react-router-dom';
+
 
 const Cart = () => {
   const { cart, handleAddToCart, handleRemoveFromCart, handleDeleteFromCart, totalPrice } = useContext(CartContext);
@@ -13,7 +15,9 @@ const Cart = () => {
       </div>
     );
   }
-  
+
+  const navigate = useNavigate();
+
   return (
     <div className="cart-container">
       <h1>Your Cart</h1>
@@ -30,8 +34,14 @@ const Cart = () => {
         ))}
       </ul>
       <h3>Total: {totalPrice} kr</h3>
+      <div className='checkout-buttons'>
+       <button className="checkout-button" onClick={() => navigate('/menu')}>Continue Shopping</button>
+       <button className="checkout-button" onClick={() => navigate('/checkout')}>Checkout</button>
+      </div>
     </div>
+    
   );
+  
 };
 
 export default Cart;
