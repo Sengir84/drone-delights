@@ -5,6 +5,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
   background-color: rgb(243, 242, 242);
+  margin: 12px;
 }
 
 .food-card img {
