@@ -65,13 +65,13 @@ console.log("Header totalPrice:", totalPrice);
       {/* Drone Delights textimg */}
       <img src={dronedelight} alt="Drone Delight" id="drone-delight-text" />
      
-     {/* Login and register only shows if not logged in, else an avatar pic shows*/}
-
+     
+      <div className="header-right">
       <Link to="/cart" className="cart-link">
         🛒 ({cart.reduce((sum, item) => sum + (item.quantity || 1), 0)}) – {totalPrice} kr
       </Link>
    
-
+      {/* Login and register only shows if not logged in, else an avatar pic shows*/}
      {!isLoggedIn ? (
       <div className="header-buttons">
         <button onClick={() => navigate('/register')}>Register</button>
@@ -86,7 +86,7 @@ console.log("Header totalPrice:", totalPrice);
         onClick={toggledropdown}
         style={{ cursor: 'pointer' }}
         />
-
+      
 
         {/* Dropdown menu from avatar pic */}
 
@@ -99,11 +99,13 @@ console.log("Header totalPrice:", totalPrice);
               setIsLoggedIn(false);
               navigate('/login');
             }}>Logout</button>
+            
       </div>
       )}
+      
       </div>
       )}
-    
+    </div>
     </header>
   );
 }

@@ -33,6 +33,7 @@
   margin-left: 2%;
   margin-top:auto;
   
+  
 }
 
 #drone-delight-text {
@@ -49,6 +50,7 @@
     height: 40px;
     margin-right: 2%;
     position: relative;
+    margin-left: 1%;
 }
 
 #avatar_pic {
@@ -68,4 +70,21 @@
   padding: 0.5rem;
   z-index: 100;  /* ensure it appears on top */
   min-width: 120px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+
+.cart-link {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;      
+  color: #ffffff;               
+  font-size: 1rem;            
+  white-space: nowrap;
+
+  
 }
