@@ -3,6 +3,7 @@ const ROUTES = {
   LOGIN: '/login',
   REGISTER: '/register',
   MENU: '/menu',
+  CART: '/cart',
   PRODUCT_DETAIL: (id) => `/menu/${id}`, // dynamic
   PROFILE: '/profile',
 };

@@ -9,6 +9,7 @@ import { useEffect, useState, useRef } from "react";
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext";
 
+
 function Header() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -94,6 +95,7 @@ console.log("Header totalPrice:", totalPrice);
           <div className="avatar-dropdown">
             <p>Hello {username}</p>
             <button onClick={() => navigate("/profile")}>Profile</button>
+            <button onClick={() => navigate("/cart")}>My cart</button>
             <button onClick={() => {
               localStorage.removeItem('token');
               setIsLoggedIn(false);
