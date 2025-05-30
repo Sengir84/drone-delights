@@ -27,51 +27,28 @@ h2 {
   font-size: 2.5rem;
 }
 
-.food-grid,
-.drinks-grid,
-.dessert-grid {
+.section-grid
+{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px;
 }
 
+.category-buttons-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
 
-.menu-item {
-  border: 1px solid #ccc;
-  padding: 12px;
+.category-button {
+  background-color: #1C924E;
+  color: white;
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
-  background-color: rgb(243, 242, 242);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-
-.menu-img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.menu-name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-.menu-desc {
-  font-size: 0.9rem;
-  margin: 4px 0;
-}
-
-.menu-price {
-  color: green;
-  font-weight: bold;
-}
-
-.menu-rating {
-  font-size: 0.85rem;
-  color: #555;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 10px;
 }
 
 @media (max-width: 768px) {

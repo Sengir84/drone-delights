@@ -9,8 +9,10 @@ function FoodCard({ dish, handleAddToCart, handleAddToFavorites, isFavorite }) {
       <p className="food-price">{dish.price} kr</p>
       <p className="food-rating">Rating: {dish.rating} ⭐</p>
 
+
+      <div className="card-buttons">
       {handleAddToCart && (
-        <button onClick={() => handleAddToCart(dish)}>🛒 Add to cart</button>
+        <button  onClick={() => handleAddToCart(dish)}>🛒 Add to cart</button>
       )}
 
       {handleAddToFavorites && (
@@ -18,8 +20,11 @@ function FoodCard({ dish, handleAddToCart, handleAddToFavorites, isFavorite }) {
           {isFavorite ? "💖 Remove favorite" : "🤍 Add to favorites"}
         </button>
       )}
+      </div>
     </div>
+    
   );
+  
 }
 
 export default FoodCard;
