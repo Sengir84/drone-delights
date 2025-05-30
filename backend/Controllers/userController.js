@@ -1,6 +1,3 @@
-//registerUser
-//route post /api/users/register
-//access public
 const bcrypt = require("bcrypt");
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
@@ -67,7 +64,7 @@ const loginUser = asyncHandler(async (req, res) => {
                 },
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "15m" }
+            { expiresIn: "100d" }
         );
         res.status(200).json({
             accessToken,
@@ -82,8 +79,67 @@ const currentUser = asyncHandler(async (req, res) => {
     res.status(200).json(req.user);
 });
 
+const updateUserCart = asyncHandler(async (req, res) =>{
+    const userId = req.user.id;
+    const { cart } = req.body;
+
+    if (!Array.isArray(cart)) {
+    res.status(400);
+    throw new Error("Cart must be an array");
+    }
+
+    const user = await User.findById(userId);
+    if(!user) {
+        res.status(404);
+        throw new Error("User not found");
+    }
+    user.cart = cart;
+    await user.save();
+
+    res.status(200).json({ cart: user.cart });
+});
+
+const updateUserFavorites = asyncHandler(async (req, res) => {
+    const userId = req.user.id;
+    const { favorites } = req.body;
+
+    if (!Array.isArray(favorites)) {
+        res.status(400);
+        throw new Error("Favorites must be an array");
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+        res.status(404);
+        throw new Error("User not found");
+    }
+
+    user.favorites = favorites;
+  await user.save();
+
+  res.status(200).json({ favorites: user.favorites });
+});
+
+const getUserCartAndFavorites = asyncHandler(async (req, res) => {
+  const userId = req.user.id;
+
+  const user = await User.findById(userId).select("cart favorites");
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  res.status(200).json({
+    cart: user.cart || [],
+    favorites: user.favorites || [],
+  });
+});
+
 module.exports = {
     registerUser,
     loginUser,
     currentUser,
+    updateUserCart,
+    updateUserFavorites,
+    getUserCartAndFavorites,
     };

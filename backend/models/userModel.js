@@ -14,10 +14,25 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "please enter a password"],
     },
- 
-}, 
-{
+    cart:[
+        {
+            id: String,
+            name: String,
+            price: Number,
+            quantity: Number,
+        }
+    ],
+ favorites: [
+    {
+      id: String,
+      name: String,
+      price: Number,
+    },
+    ],
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
 module.exports = mongoose.model("User", userSchema);

@@ -1,0 +1,36 @@
+.food-card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-color: rgb(243, 242, 242);
+}
+
+.food-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.food-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.food-desc {
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+.food-price {
+  color: green;
+  font-weight: bold;
+}
+
+.food-rating {
+  font-size: 0.85rem;
+  color: #555;
+}

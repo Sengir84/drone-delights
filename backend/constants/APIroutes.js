@@ -3,6 +3,9 @@ const API_ROUTES = {
   REGISTER: '/register',
   LOGIN: '/login',
   CURRENT: '/current',
+  USER_CART: '/cart',
+  USER_FAVORITES: '/favorites',
+  USER_CART_FAVORITES: '/cartfavorites',
 };
 
 module.exports = API_ROUTES;
