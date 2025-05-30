@@ -1,9 +1,12 @@
 .popular-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;          
+  column-gap: 20px;       
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  align-items: stretch;   
 }
 
 @media (max-width: 768px) {

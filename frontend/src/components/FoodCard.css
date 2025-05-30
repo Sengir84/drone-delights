@@ -1,7 +1,12 @@
 .food-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100%; 
   border: 1px solid #ccc;
-  padding: 12px;
+  padding: 8px;
   border-radius: 8px;
+  box-sizing: border-box;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
   background-color: rgb(243, 242, 242);
@@ -10,7 +15,7 @@
 
 .food-card img {
   width: 100%;
-  height: 120px;
+  height: 135px;
   object-fit: cover;
   border-radius: 6px;
 }
@@ -34,4 +39,14 @@
 .food-rating {
   font-size: 0.85rem;
   color: #555;
+}
+
+.card-buttons {
+ 
+  margin-top: auto;
+  margin-bottom: 8px; 
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap; 
 }
