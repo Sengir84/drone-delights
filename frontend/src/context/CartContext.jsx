@@ -37,6 +37,21 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const handleRemoveFromCart = (dishId) => {
+  setCart(prevCart => {
+    return prevCart
+      .map(item => 
+        item.id === dishId 
+          ? { ...item, quantity: (item.quantity || 1) - 1 } 
+          : item
+      )
+      .filter(item => item.quantity > 0);
+  });
+};
+
+const handleDeleteFromCart = (dishId) => {
+  setCart(prevCart => prevCart.filter(item => item.id !== dishId));
+};
   
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -96,7 +111,9 @@ export const CartProvider = ({ children }) => {
       setFavorites,
       totalPrice,
       handleAddToCart,         
-      handleAddToFavorites     
+      handleAddToFavorites,
+      handleRemoveFromCart,
+      handleDeleteFromCart,     
     }}>
       {children}
     </CartContext.Provider>

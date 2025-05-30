@@ -5,8 +5,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import About from './pages/About';
 import MenuPage from './pages/Menu';
+import CartPage from './pages/Cart';
+import CheckoutPage from './pages/Checkout';
 
-export default function AppRoutes() {
+ function AppRoutes() {
   return (
     <Routes>
       {/* Alla sidor som använder Layout */}
@@ -14,10 +16,14 @@ export default function AppRoutes() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/menu" element={<MenuPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Route>
       
     </Routes>
   );
 }
+
+export default AppRoutes;
