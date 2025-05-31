@@ -6,6 +6,7 @@ const API_ROUTES = {
   USER_CART: '/cart',
   USER_FAVORITES: '/favorites',
   USER_CART_FAVORITES: '/cartfavorites',
+  USER_PROFILE: '/profile',
 };
 
 module.exports = API_ROUTES;

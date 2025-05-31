@@ -6,6 +6,8 @@ const {
     updateUserCart,
     updateUserFavorites,
     getUserCartAndFavorites,
+    getUserProfile,
+    updateUserProfile,
     } = require('../controllers/userController');
 
 const validateToken = require('../middleware/validateTokenHandler');
@@ -16,7 +18,12 @@ const router = express.Router();
 //User routes
 router.post(ROUTES.REGISTER, registerUser);           
 router.post(ROUTES.LOGIN, loginUser);                 
-router.get(ROUTES.CURRENT, validateToken, currentUser);  
+router.get(ROUTES.CURRENT, validateToken, currentUser);
+
+//Profile routes
+router.route(ROUTES.USER_PROFILE)
+  .get(validateToken, getUserProfile)
+  .put(validateToken, updateUserProfile);           
 
 //Cart and favorites routes
 router.put(ROUTES.USER_CART, validateToken, updateUserCart);             

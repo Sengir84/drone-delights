@@ -14,6 +14,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "please enter a password"],
     },
+    firstName: { type: String, default: "" },
+    lastName: { type: String, default: "" },
     cart:[
         {
             id: String,
@@ -29,10 +31,16 @@ const userSchema = new mongoose.Schema({
       price: Number,
     },
     ],
+    
+ address: {
+    street: { type: String, default: "" },
+    city: { type: String, default: "" },
+    zip: { type: String, default: "" },
   },
-  {
-    timestamps: true,
-  }
-);
+  phone: { type: String, default: "" },
+
+}, {
+  timestamps: true,
+});
 
 module.exports = mongoose.model("User", userSchema);

@@ -135,6 +135,47 @@ const getUserCartAndFavorites = asyncHandler(async (req, res) => {
   });
 });
 
+const getUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user.id).select("-password");
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+  res.json(user);
+});
+
+const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user.id);
+  if (!user) {
+    res.status(404);
+    throw new Error("User not found");
+  }
+
+  user.username = req.body.username || user.username;
+  user.email = req.body.email || user.email;
+  user.firstName = req.body.firstName || user.firstName;
+  user.lastName = req.body.lastName || user.lastName;
+
+  user.address.street = req.body.address?.street ?? user.address.street;
+  user.address.city = req.body.address?.city ?? user.address.city;
+  user.address.zip = req.body.address?.zip ?? user.address.zip;
+  
+
+  user.phone = req.body.phone || user.phone;
+
+  const updatedUser = await user.save();
+
+  res.json({
+    _id: updatedUser._id,
+    username: updatedUser.username,
+    email: updatedUser.email,
+    firstName: updatedUser.firstName,
+    lastName: updatedUser.lastName,
+    address: updatedUser.address,
+    phone: updatedUser.phone,
+  });
+});
+
 module.exports = {
     registerUser,
     loginUser,
@@ -142,4 +183,6 @@ module.exports = {
     updateUserCart,
     updateUserFavorites,
     getUserCartAndFavorites,
+    getUserProfile,
+    updateUserProfile,
     };
