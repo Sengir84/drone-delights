@@ -10,7 +10,7 @@ const SwishPaymentForm = ({ onChange }) => {
   return (
     <div>
       <label>
-        Swish-telefonnummer
+        Swish-number
         <input
           type="tel"
           value={phone}

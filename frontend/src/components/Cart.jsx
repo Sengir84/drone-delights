@@ -4,8 +4,16 @@ import './Cart.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const Cart = () => {
-  const { cart, handleAddToCart, handleRemoveFromCart, handleDeleteFromCart, totalPrice } = useContext(CartContext);
+const Cart = ({ cart: externalCart,showControls = true, onClose }) => {
+  const {
+  cart: contextCart,
+  handleAddToCart,
+  handleRemoveFromCart,
+  handleDeleteFromCart,
+  totalPrice
+} = useContext(CartContext);
+
+const cart = externalCart || contextCart;
   
   if (!cart || cart.length === 0) {
     return (
@@ -18,6 +26,16 @@ const Cart = () => {
 
   const navigate = useNavigate();
 
+  const handleContinueShopping = () => {
+    navigate('/menu');
+    if (onClose) onClose();
+  };
+
+  const handleCheckout = () => {
+    navigate('/checkout');
+    if (onClose) onClose();
+  };
+
   return (
     <div className="cart-container">
       <h1>Your Cart</h1>
@@ -25,19 +43,23 @@ const Cart = () => {
         {cart.map(item => (
           <li key={item.id} className="cart-item">
             <span>{item.name} – {item.price} kr × {item.quantity || 1}</span>
-            <div className="cart-buttons">
-              <button className="addsub" onClick={() => handleRemoveFromCart(item.id)}>−</button>
-              <button className="addsub" onClick={() => handleAddToCart(item)}>+</button>
-              <button onClick={() => handleDeleteFromCart(item.id)}>🗑️</button>
-            </div>
+            {showControls && (
+              <div className="cart-buttons">
+                <button className="addsub" onClick={() => handleRemoveFromCart(item.id)}>−</button>
+                <button className="addsub" onClick={() => handleAddToCart(item)}>+</button>
+                <button onClick={() => handleDeleteFromCart(item.id)}>🗑️</button>
+              </div>
+            )}
           </li>
         ))}
       </ul>
       <h3>Total: {totalPrice} kr</h3>
-      <div className='checkout-buttons'>
-       <button className="checkout-button" onClick={() => navigate('/menu')}>Continue Shopping</button>
-       <button className="checkout-button" onClick={() => navigate('/checkout')}>Checkout</button>
-      </div>
+      {showControls && (
+        <div className='checkout-buttons'>
+          <button className="checkout-button" onClick={handleContinueShopping}>Continue Shopping</button>
+          <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
+        </div>
+      )}
     </div>
     
   );

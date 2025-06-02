@@ -55,7 +55,7 @@ h2 {
   .food-grid,
   .drinks-grid,
   .dessert-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
@@ -63,6 +63,6 @@ h2 {
   .food-grid,
   .drinks-grid,
   .dessert-grid {
-    grid-template-columns: 1fr; /* 1 column on phones */
+    grid-template-columns: 1fr; 
   }
 }

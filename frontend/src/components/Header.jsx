@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import routes from "../AppRoutes";
 import "./Header.css";
 import Avatar from '../assets/avatars/Default avatar.png';
 import logoimg from '../assets/Img/logo.png';
@@ -10,7 +9,7 @@ import { useContext } from "react"
 import { CartContext } from "../context/CartContext";
 
 
-function Header() {
+function Header({ openCart}) {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -68,9 +67,9 @@ console.log("Header totalPrice:", totalPrice);
      
      
       <div className="header-right">
-      <Link to="/cart" className="cart-link">
+      <button className="cart-link" onClick={openCart}>
         🛒 ({cart.reduce((sum, item) => sum + (item.quantity || 1), 0)}) – {totalPrice} kr
-      </Link>
+      </button>
    
       {/* Login and register only shows if not logged in, else an avatar pic shows*/}
      {!isLoggedIn ? (
@@ -95,7 +94,7 @@ console.log("Header totalPrice:", totalPrice);
           <div className="avatar-dropdown">
             <p>Hello {username}</p>
             <button onClick={() => navigate("/profile")}>Profile</button>
-            <button onClick={() => navigate("/cart")}>My cart</button>
+            <button onClick={openCart}>My cart</button>
             <button onClick={() => {
               localStorage.removeItem('token');
               setIsLoggedIn(false);

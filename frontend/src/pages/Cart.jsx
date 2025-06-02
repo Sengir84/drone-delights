@@ -1,6 +1,5 @@
 import React from "react";
-import Cart from "../components/Cart"; // Adjust path if needed
-import { useContext } from "react";
+import Cart from "../components/Cart";
 import { CartContext } from "../context/CartContext";
 
 const CartPage = () => {

@@ -20,8 +20,11 @@ function Login() {
       const response = await axios.post(API_Routes.LOGIN, formdata);
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("username", response.data.username);
-      window.location.reload();
       navigate("/");
+      setTimeout(() => {
+      window.location.reload();
+      }, 100);
+      
   }
     catch (error) {
       setError(error.response?.data?.message || "Login failed");

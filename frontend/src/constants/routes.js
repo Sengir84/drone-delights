@@ -1,3 +1,5 @@
+
+// This file defines the routes and is for navigating the Drone Delights application.
 const ROUTES = {
   HOME: '/',
   LOGIN: '/login',

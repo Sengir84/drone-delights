@@ -25,6 +25,10 @@ function MenuPage() {
 
 <div className="menu-container">
 
+
+
+<h1>Menu</h1>
+
 <div className="category-buttons-section">
   <button className="category-button" onClick={() => setSelectedCategory("all")}>All</button>
   <button className="category-button" onClick={() => setSelectedCategory("food")}>Foods</button>
@@ -32,8 +36,6 @@ function MenuPage() {
   <button className="category-button" onClick={() => setSelectedCategory("dessert")}>Desserts</button>
   <button className="category-button" onClick={() => setSelectedCategory("favorites")}>Favorites</button>
 </div>
-
-<h1>Menu</h1>
 
 {selectedCategory === "all" || selectedCategory === "food" ? (
   <CategorySection title="Food" items={foods} {...handlers} />

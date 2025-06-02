@@ -3,7 +3,9 @@ import { CartContext } from "../context/CartContext";
 import axios from "axios";
 import CardPayment from "../components/CardPayment";
 import SwishPayment from "../components/SwishPayment";
-
+import Cart from "../components/Cart";
+import DeliveryInfo from "../components/DeliveryInfo";
+import "./Checkout.css";
 
 const CheckoutPage = () => {
   const { cart, totalPrice, setCart } = useContext(CartContext);
@@ -12,6 +14,7 @@ const CheckoutPage = () => {
   const [paymentDetails, setPaymentDetails] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [cartSnapshot, setCartSnapshot] = useState([]);
 
   const token = localStorage.getItem("token");
 
@@ -40,13 +43,29 @@ const CheckoutPage = () => {
     setIsSubmitting(true);
 
     setTimeout(async () => {
+      setCartSnapshot(cart);
       setConfirmed(true);
       setIsSubmitting(false);
+
+      //Update order counts in the database
+      try {
+      await Promise.all(cart.map(async (item) => {
+        const menuItemRes = await axios.get(`http://localhost:3000/menu/${item.id}`);
+        const currentOrders = menuItemRes.data.orders || 0;
+        const newOrders = currentOrders + (item.quantity || 1);
+
+        await axios.patch(`http://localhost:3000/menu/${item.id}`, {
+          orders: newOrders,
+        });
+      }));
+    } catch (err) {
+      console.error("Failed to update order counts:", err);
+    }
       // reset local cart
       setCart([]); 
 
       try {
-        //rester cart in backend
+        //reste cart in backend
         await axios.put("http://localhost:3001/api/users/cart", { cart: [] }, {
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -60,37 +79,23 @@ const CheckoutPage = () => {
     return (
       <div>
         <h1>Thank you for your order!</h1>
-        <p>Your food is on it's way. 🚀</p>
+        <div className="confirmation-cart">
+        <Cart cart={cartSnapshot} showControls={false} />
+        </div>
+        <p>Your food is on it's way. </p>
       </div>
     );
   }
 
   return (
     <div>
-      <h1>Payment</h1>
+      <h1>Checkout</h1>
 
       <form onSubmit={handleSubmit}>
-        <h2>Delivery</h2>
-        <input type="text" defaultValue={userData?.firstName} placeholder="Förnamn" required />
-        <input type="text" defaultValue={userData?.lastName} placeholder="Efternamn" required />
-        <input type="text" defaultValue={userData?.address?.street} placeholder="Gatuadress" required />
-        <input type="text" defaultValue={userData?.address?.city} placeholder="Stad" required />
-        <input type="text" defaultValue={userData?.address?.zip} placeholder="Postnummer" required />
-        <input type="tel" defaultValue={userData?.phone} placeholder="Telefonnummer" required />
+        <DeliveryInfo userData={userData} />
 
-        <h2>Your Cart</h2>
-        {cart.length === 0 ? (
-          <p>Your cart is empty.</p>
-        ) : (
-          <ul>
-            {cart.map((item) => (
-              <ul key={item.id}>
-                {item.name} x {item.quantity} - {item.price} kr
-              </ul>
-            ))}
-          </ul>
-        )}
-        <p><strong>Total:</strong> {totalPrice} kr</p>
+        
+        <Cart showControls={false} />
 
         <h2>Payment</h2>
         <label>

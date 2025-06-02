@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Profile.css'; 
 
 function Profile() {
   const [profile, setProfile] = useState({
@@ -43,28 +44,29 @@ function Profile() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="address-section">
+      
         <label>Username:</label>
         <input type="text" name="username" value={profile.username} disabled />
-      </div>
-      <div>
         <label>Email:</label>
         <input type="email" name="email" value={profile.email} disabled />
-      </div>
-      <div>
         <label>Phone:</label>
         <input type="text" name="phone" value={profile.phone} onChange={handleChange} />
-      </div>
-      <div>
-        <legend>Address</legend>
+      
+        
+        <label>Firstname</label>
         <input type='text' name='firstName' placeholder='First Name' value={profile.firstName} onChange={handleChange} />
+        <label>Lastname</label>
         <input type='text' name='lastName' placeholder='Last Name' value={profile.lastName} onChange={handleChange} />
+        <label>Streetaddress</label>
         <input type="text" name="address.street" placeholder="Street" value={profile.address.street} onChange={handleChange} />
+        <label>City</label>
         <input type="text" name="address.city" placeholder="City" value={profile.address.city} onChange={handleChange} />
+        <label>Zipcode</label>
         <input type="text" name="address.zip" placeholder="ZIP" value={profile.address.zip} onChange={handleChange} />
         
       </div>
-      <button type="submit">Save</button>
+      <button id="profile-save-button" type="submit">Save</button>
     </form>
   );
 }

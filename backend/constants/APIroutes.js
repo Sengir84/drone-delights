@@ -1,4 +1,5 @@
 //Api routes helper, change the routes here to change the api routes in the whole project
+//Defines the API routes for the backend, used in user and profile management
 const API_ROUTES = {
   REGISTER: '/register',
   LOGIN: '/login',

@@ -1,17 +1,17 @@
 {
   "menu": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Italian Prosciutto Pizza",
       "image": "/images/Food/Pizza.png",
       "description": "Classic pizza with tomato sauce, mozzarella, prosciutto and fresh basil.",
       "type": "food",
       "price": 89,
       "rating": 4.5,
-      "orders": 120
+      "orders": 125
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Scottish Haggis",
       "image": "/images/Food/Haggis.png",
       "description": "Rustic Scottish dish made with sheep's offal, oats, and spices.",
@@ -21,27 +21,27 @@
       "orders": 85
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "American Cheeseburger",
       "image": "/images/Food/Burger.png",
       "description": "Juicy beef patty with cheddar cheese, lettuce, tomato, and pickles.",
       "type": "food",
       "price": 95,
       "rating": 4.7,
-      "orders": 150
+      "orders": 151
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Japanese Spicy Ramen",
       "image": "/images/Food/Ramen.png",
       "description": "Rich miso broth with noodles, chili oil, pork slices, and a soft-boiled egg.",
       "type": "food",
       "price": 85,
       "rating": 4.6,
-      "orders": 90
+      "orders": 91
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Icelandic Plokkfiskur",
       "image": "/images/Food/Plokkfiskur.png",
       "description": "Creamy mash of fresh cod, potatoes, and onions.",
@@ -51,8 +51,8 @@
       "orders": 90
     },
     {
-      "id": 6,
-      "name": "Ethiopian Misir Wat (Vegan dish)",
+      "id": "6",
+      "name": "Ethiopian Misir Wat (Vegan)",
       "image": "/images/Food/MisirWat.png",
       "description": "Spicy red lentil stew simmered with berbere and garlic.",
       "type": "food",
@@ -61,7 +61,7 @@
       "orders": 90
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Korean Yangnyeom Chicken",
       "image": "/images/Food/Yangnyeom.png",
       "description": "Crispy fried chicken coated in sweet, spicy gochujang sauce.",
@@ -71,7 +71,7 @@
       "orders": 90
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Georgian Khinkali",
       "image": "/images/Food/Khinkali.png",
       "description": "Juicy dumplings filled with spiced meat, eaten by hand with a sip of broth.",
@@ -81,7 +81,7 @@
       "orders": 90
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Nuka Cola",
       "image": "/images/Drinks/Nuka.png",
       "description": "A sparkling beverage made to stand the test of time, and maybe even the apocalypse.",
@@ -91,7 +91,7 @@
       "orders": 90
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Smokehead Whiskey",
       "image": "/images/Drinks/Whiskey.png",
       "description": "A bold, peaty single malt Scotch whisky with a smoky finish.",
@@ -101,17 +101,17 @@
       "orders": 90
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Passion Delight",
       "image": "/images/Drinks/Passion.png",
       "description": "A drink based on the passion fruit, with a hint of tropical sweetness.",
       "type": "drink",
       "price": 85,
       "rating": 4.6,
-      "orders": 90
+      "orders": 91
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Lemon iced Tea",
       "image": "/images/Drinks/Icetea.png",
       "description": "Refreshing Ice tea made with brewed tea, lemon juice, and ice.",
@@ -121,7 +121,7 @@
       "orders": 90
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Coffee",
       "image": "/images/Drinks/Coffee.png",
       "description": "A drink based on the passion fruit, with a hint of tropical sweetness.",
@@ -131,7 +131,7 @@
       "orders": 90
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Chocolate cake",
       "image": "/images/Dessert/Chocolate.png",
       "description": "A drink based on the passion fruit, with a hint of tropical sweetness.",
@@ -141,7 +141,7 @@
       "orders": 90
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Ice cream",
       "image": "/images/Dessert/IceCream.png",
       "description": "A drink based on the passion fruit, with a hint of tropical sweetness.",
@@ -151,17 +151,17 @@
       "orders": 90
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Lemon Posset",
       "image": "/images/Dessert/LemonPosset.png",
       "description": "Rich cream infused with zesty lemon, chilled to perfection and topped with fresh berries for a bright, refreshing finish.",
       "type": "dessert",
       "price": 85,
       "rating": 4.6,
-      "orders": 90
+      "orders": 211
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Matcha Tiramisu",
       "image": "/images/Dessert/Tiramisu.png",
       "description": "Creamy mascarpone with delicate matcha green tea for a subtly earthy and smooth dessert experience.",
