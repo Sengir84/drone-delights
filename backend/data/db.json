@@ -8,7 +8,7 @@
       "type": "food",
       "price": 89,
       "rating": 4.5,
-      "orders": 125
+      "orders": 126
     },
     {
       "id": "2",
@@ -28,7 +28,7 @@
       "type": "food",
       "price": 95,
       "rating": 4.7,
-      "orders": 151
+      "orders": 155
     },
     {
       "id": "4",
@@ -38,7 +38,7 @@
       "type": "food",
       "price": 85,
       "rating": 4.6,
-      "orders": 91
+      "orders": 94
     },
     {
       "id": "5",
@@ -138,7 +138,7 @@
       "type": "dessert",
       "price": 85,
       "rating": 4.6,
-      "orders": 90
+      "orders": 92
     },
     {
       "id": "15",
@@ -158,7 +158,7 @@
       "type": "dessert",
       "price": 85,
       "rating": 4.6,
-      "orders": 211
+      "orders": 217
     },
     {
       "id": "17",

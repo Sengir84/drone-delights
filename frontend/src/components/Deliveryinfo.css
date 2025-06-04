@@ -1,0 +1,32 @@
+.delivery-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.delivery-inputs h2 {
+  grid-column: span 3;
+}
+
+.delivery-inputs label {
+  margin-top: 1rem;
+}
+
+.delivery-inputs input {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .delivery-inputs {
+    grid-template-columns: 1fr; /* Stack in 1 column */
+  }
+
+  .delivery-inputs h2 {
+    grid-column: span 1;
+  }
+}

@@ -63,8 +63,9 @@ console.log("Header totalPrice:", totalPrice);
       </Link>
       
       {/* Drone Delights textimg */}
+      <Link to="/" className="logo-link">
       <img src={dronedelight} alt="Drone Delight" id="drone-delight-text" />
-     
+      </Link>
      
       <div className="header-right">
       <button className="cart-link" onClick={openCart}>

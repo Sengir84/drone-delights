@@ -78,24 +78,25 @@ const CheckoutPage = () => {
   if (confirmed) {
     return (
       <div>
-        <h1>Thank you for your order!</h1>
+        <h1 id="thank-you">Thank you for your order!</h1>
         <div className="confirmation-cart">
         <Cart cart={cartSnapshot} showControls={false} />
         </div>
-        <p>Your food is on it's way. </p>
+        <p id="way">Your food is on it's way. </p>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="checkout-container">
       <h1>Checkout</h1>
 
       <form onSubmit={handleSubmit}>
         <DeliveryInfo userData={userData} />
 
-        
-        <Cart showControls={false} />
+        <div id="cart-summary">
+          <Cart showControls={false} />
+        </div>
 
         <h2>Payment</h2>
         <label>
@@ -126,7 +127,7 @@ const CheckoutPage = () => {
           <SwishPayment onChange={handlePaymentDetailsChange} />
         )}
 
-        <button type="submit" disabled={isSubmitting || cart.length === 0}>
+        <button id="checkout-button" type="submit" disabled={isSubmitting || cart.length === 0}>
           {isSubmitting ? "Proccessing..." : "Confirm Order"}
         </button>
       </form>

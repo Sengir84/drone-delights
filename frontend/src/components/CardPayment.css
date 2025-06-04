@@ -1,0 +1,18 @@
+.card-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%; /* stacked on mobile */
+}
+
+@media (min-width: 600px) {
+  .form-group {
+    flex: 1 1 0; /* side-by-side on desktop */
+  }
+}

@@ -1,14 +1,16 @@
-.form-container {
+.register-form {
+  width: 100%;          
+  max-width: 350px;     
+  margin: 0 auto;       
+  padding: 0 10px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 35vh;
-  padding: 0 10px; 
-  box-sizing: border-box;
 }
 
-.form-container input {
+.register-form input,
+#register-button {
   width: 100%;
   max-width: 300px;
   border-radius: 8px;
@@ -17,8 +19,8 @@
   box-sizing: border-box;
 }
 
-.form-container button {
-  border-radius: 8px;
+#register-button {
+    border-radius: 8px;
   height: 40px;
   width: 100%;
   max-width: 150px;
@@ -30,8 +32,8 @@
 }
 
 @media (max-width: 600px) {
-  .form-container input,
-  .form-container button {
+  .register-form,
+  #register-button {
     max-width: 300px;
   }
 }

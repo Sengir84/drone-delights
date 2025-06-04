@@ -53,12 +53,15 @@ const cart = externalCart || contextCart;
           </li>
         ))}
       </ul>
-      <h3>Total: {totalPrice} kr</h3>
+      
       {showControls && (
+        <>
+        <h3>Total: {totalPrice} kr</h3>
         <div className='checkout-buttons'>
           <button className="checkout-button" onClick={handleContinueShopping}>Continue Shopping</button>
           <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
         </div>
+        </>
       )}
     </div>
     

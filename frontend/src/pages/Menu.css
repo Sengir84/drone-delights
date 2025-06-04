@@ -10,7 +10,7 @@ section {
 h1 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 30px;
+  margin:0;
   text-shadow: rgb(163, 163, 163) 3px 3px 2px;
 }
 
@@ -52,17 +52,35 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .food-grid,
-  .drinks-grid,
-  .dessert-grid {
+  .section-grid {
     grid-template-columns: repeat(2, 1fr); 
   }
-}
 
+  .category-button {
+    font-size: 1.1rem;
+    padding: 5px 5px;
+    margin: 5px;
+  }
+}
 @media (max-width: 480px) {
-  .food-grid,
-  .drinks-grid,
-  .dessert-grid {
+  .section-grid {
     grid-template-columns: 1fr; 
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2, .category {
+    font-size: 1.5rem;
+  }
+
+  .menu-container {
+    padding: 10px;
+  }
+
+  .category-button {
+    font-size: 0.9rem;
+    padding: 5px 5px;
+    margin: 5px;
   }
 }
